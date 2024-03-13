@@ -1,0 +1,163 @@
+<div class="banner_section layout_padding">
+  <div id="main_slider" class="carousel slide" data-ride="carousel">
+     <div class="carousel-inner">
+        <div class="carousel-item active">
+           <div class="container">
+              <h1 class="banner_taital">Watchs</h1>
+              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+              <div class="read_bt"><a href="#">Buy Now</a></div>
+           </div>
+        </div>
+        <div class="carousel-item">
+           <div class="container">
+              <h1 class="banner_taital">Watasdsadachs</h1>
+              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+              <div class="read_bt"><a href="#">Buy Now</a></div>
+           </div>
+        </div>
+        <div class="carousel-item">
+           <div class="container">
+              <h1 class="banner_taital">Watcaaahs</h1>
+              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+              <div class="read_bt"><a href="#">Buy Now</a></div>
+           </div>
+        </div>
+     </div>
+     <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+     <i class="fa fa-plus" style="font-size:24px; color: #fff;"></i>
+     </a>
+     <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+     <i class="fa fa-minus" style="font-size:24px;  color: #fff;"></i>
+     </a>
+  </div>
+</div>
+
+<div class="background_bg">
+  <!-- watchs section start -->
+  <div class="watchs_section layout_padding">
+     <div class="container"  *ngFor="let i of data ;let indexOfelement=index;">
+      <ng-container *ngIf="indexOfelement % 2 === 0">
+
+        <h1 class="watchs_taital">01<br>Our Watchs</h1>
+        <div class="watchs_section_2" >
+           <div class="row">
+              <div class="col-md-6">
+                 <div class="image_1"><img [src]="productImageList[indexOfelement]"></div>
+              </div>
+              <div class="col-md-6">
+                 <h4 class="uni_text">Uni Watch {{i.id}}</h4>
+                 <p class="watchs_text">{{i.description}}</p>
+                 <h4 class="rate_text"><span style="color: #b60213;">{{i.price | currency:'EUR'}}</span></h4>
+                 <div class="read_bt1"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)">Buy Now</a></div>
+              </div>
+           </div>
+        </div>
+        <div class="watchs_section_3">
+           <div class="row">
+              <div class="col-md-6">
+                <h4 class="uni_text">Uni Watch {{i.id}}</h4>
+                <p class="watchs_text">{{i.description}}</p><h4 class="rate_text"><span style="color: #b60213;">{{i.price | currency:'EUR'}}</span></h4>
+                 <div class="read_bt1" ><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)">Buy Now</a></div>
+              </div>
+              <div class="col-md-6">
+                 <div class="image_2"><img [src]="productImageList[indexOfelement+1]"></div>
+              </div>
+           </div>
+        </div>
+        <!--<div class="seemore_bt"><a href="#">See More</a></div> -->
+        </ng-container>
+     </div>
+  </div>
+<!--<div class="carousel-container">
+  <igx-carousel #carousel>
+      <igx-slide *ngFor="let i of data;let indexOfelement=index;">
+          <div class="image-container" (click)="openDialog(i, indexOfelement)">
+              <img  [src]="productImageList[indexOfelement]">
+          </div>
+      </igx-slide>
+  </igx-carousel>
+</div> -->
+<section class="py-5">
+  <h1 class="fade-in-text" style="text-align: center;">Shop in style</h1>
+  <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" *ngFor="let i of productList;let indexOfelement=index;">
+              <div class="card h-100">
+                  <!-- Sale badge-->
+                  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                  <!-- Product image-->
+                  <img (click)="openDialog(i, indexOfelement)" [src]="productImageList[indexOfelement]" class="card-img-top" >
+
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          <h5 class="fw-bolder">Special Item</h5>
+                          <!-- Product reviews
+                          <div class="d-flex justify-content-center small text-warning mb-2">
+                              <div class="bi-star-fill"></div>
+                              <div class="bi-star-fill"></div>
+                              <div class="bi-star-fill"></div>
+                              <div class="bi-star-fill"></div>
+                              <div class="bi-star-fill"></div>
+                          </div>-->
+                          <!-- Product price
+                          <span class="text-muted text-decoration-line-through">{{i.price}}</span>-->
+                          {{i.price | currency:'EUR'}}
+
+                          <p>{{i.width}} x {{i.lenght}} </p>
+                      </div>
+                  </div>
+                  <!-- Product actions-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)" >Add to cart</a></div>
+                  </div>
+              </div>
+          </div>         
+      </div>
+  </div>
+
+  
+
+
+
+</section>
+
+
+<!-- <div class="gallery-lightbox-container">
+  <div class="row">
+    <div class="col-xl-10 col-m
+    d-8">
+      <div class="example-container mat-elevation-z8">
+
+        <mat-grid-list cols="4" rowHeight="2:1">
+            <mat-grid-tile  [colspan]="1" [rowspan]="2"*ngFor="let i of data;let indexOfelement=index;"   [style.background]= setBackGroundColor() >
+              <div class="media-body pt-3">
+                <img (click)="openDialog()" [src]="productImageList[indexOfelement]" class="img-thumbnail" >
+                <div class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left" style="max-width: 10rem;">
+                  <button (click)="addToCart(i)" type="button" class="btn btn-info mt-3">Add to Cart</button>
+                </div>.
+            </div>
+              
+  
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-paginator [length]="productList.length"
+        [pageSizeOptions]="[4, 8, 12]"
+        (page)="getData($event)">
+      </mat-paginator>
+
+      </div>
+    
+
+
+    </div> 
+  
+  
+  </div>
+</div>-->
+
+
+
+    <!-- Sidebar-->
+    
