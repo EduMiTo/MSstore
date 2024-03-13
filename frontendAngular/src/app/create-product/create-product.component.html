@@ -1,0 +1,65 @@
+<mat-drawer-container>
+    
+    <mat-drawer-content id = "content">
+      
+      
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Create Product</h1>
+        <form #productForm (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="width">Width:</label>
+              <input type="number" class="form-control" id="width" [(ngModel)]="product.width" name="width">
+            </div>
+            <div class="form-group">
+              <label for="length">Length:</label>
+              <input type="number" class="form-control" id="lenght" [(ngModel)]="product.lenght" name="length">
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price">
+            </div>
+            <div class="form-group">
+              <label for="file">Image:</label>
+              <input type="file" class="form-control" id="file" (change)="onFileSelected($event)" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+                <label for="name" id="result" [hidden]="!error" class="errormsg">&#9888; {{message}} &#9888;</label>
+          </form>
+    </div>
+
+    
+
+    <div [hidden]="!submitted">
+        <h2>Product created sucessfully!</h2>
+        <table class="table" style="margin-top: 2%;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Price</th>
+                    <th>Width</th>
+                    <th>Lenght</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{product.id}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.width}}</td>
+                <td>{{product.lenght}}</td>
+            </tbody>
+        </table>
+        <button type="reset" class="btn btn-outline-dark my-2 my-sm-0" style="margin-top: 500px;"
+            (click)="submitted = false; productForm.reset()">OK!</button>
+    </div>
+</div>
+
+
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+
+
+  

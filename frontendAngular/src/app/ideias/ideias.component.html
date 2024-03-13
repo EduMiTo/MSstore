@@ -1,0 +1,38 @@
+<mat-drawer-container>
+    
+    <mat-drawer-content id = "content">
+      
+      
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Ask me</h1>
+        <form #productForm (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Phone number</mat-label>
+                <input matInput>
+              </mat-form-field>
+            
+              <mat-form-field class="example-full-width">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput></textarea>
+              </mat-form-field>
+
+            <button type="submit" class="btn btn-outline-dark mt-auto">Submit</button>
+            <br>
+                <label for="name" id="result" [hidden]="!error" class="errormsg">&#9888; {{message}} &#9888;</label>
+          </form>
+    </div>
+</div>
+
+
+
+    </mat-drawer-content>
+  </mat-drawer-container>
