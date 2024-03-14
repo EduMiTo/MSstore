@@ -1,72 +1,80 @@
-<div class="banner_section layout_padding">
-  <div id="main_slider" class="carousel slide" data-ride="carousel">
-     <div class="carousel-inner">
-        <div class="carousel-item active">
-           <div class="container">
-              <h1 class="banner_taital">Watchs</h1>
-              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              <div class="read_bt"><a href="#">Buy Now</a></div>
-           </div>
-        </div>
-        <div class="carousel-item">
-           <div class="container">
-              <h1 class="banner_taital">Watasdsadachs</h1>
-              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              <div class="read_bt"><a href="#">Buy Now</a></div>
-           </div>
-        </div>
-        <div class="carousel-item">
-           <div class="container">
-              <h1 class="banner_taital">Watcaaahs</h1>
-              <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              <div class="read_bt"><a href="#">Buy Now</a></div>
-           </div>
-        </div>
-     </div>
-     <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-     <i class="fa fa-plus" style="font-size:24px; color: #fff;"></i>
-     </a>
-     <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-     <i class="fa fa-minus" style="font-size:24px;  color: #fff;"></i>
-     </a>
-  </div>
+<div class="header_section">
+   <!-- banner section start -->
+   <!-- #TODO FOTO MATILDE DE FUNDO OU FOTO DO LOGO E POR CIMA PASSAR FOTOS DELA A DESENHAR/PINTAR/ETC --> 
+   <div class="banner_section layout_padding">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container">
+                  <h1 class="banner_taital">Watchs</h1>
+                  <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                  <div class="read_bt"><a href="#">Buy Now</a></div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <h1 class="banner_taital">Watchs</h1>
+                  <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                  <img src="../../assets/images/img-1.png" alt="">
+                  <div class="read_bt"><a href="#">Buy Now</a></div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <h1 class="banner_taital">Watchs</h1>
+                  <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                  <div class="read_bt"><a href="#">Buy Now</a></div>
+               </div>
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+         <i class="fa fa-plus" style="font-size:24px; color: #fff;"></i>
+         </a>
+         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+         <i class="fa fa-minus" style="font-size:24px;  color: #fff;"></i>
+         </a>
+      </div>
+   </div>
+   <!-- banner section end -->
 </div>
 
 <div class="background_bg">
   <!-- watchs section start -->
   <div class="watchs_section layout_padding">
+   <h1 class="watchs_taital">01<br>Our Watchs</h1>
+
      <div class="container"  *ngFor="let i of data ;let indexOfelement=index;">
       <ng-container *ngIf="indexOfelement % 2 === 0">
 
-        <h1 class="watchs_taital">01<br>Our Watchs</h1>
         <div class="watchs_section_2" >
            <div class="row">
               <div class="col-md-6">
-                 <div class="image_1"><img [src]="productImageList[indexOfelement]"></div>
+                 <div class="image_1"><img (click)="openDialog(i, indexOfelement)" [src]="productImageList[indexOfelement]"></div>
               </div>
               <div class="col-md-6">
                  <h4 class="uni_text">Uni Watch {{i.id}}</h4>
                  <p class="watchs_text">{{i.description}}</p>
                  <h4 class="rate_text"><span style="color: #b60213;">{{i.price | currency:'EUR'}}</span></h4>
-                 <div class="read_bt1"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)">Buy Now</a></div>
+                 <div class="read_bt"><a  (click)="addToCart(i)">Buy Now</a></div>
               </div>
            </div>
         </div>
-        <div class="watchs_section_3">
+        <div class="watchs_section_3" style="margin-bottom: 2%;">
            <div class="row">
               <div class="col-md-6">
                 <h4 class="uni_text">Uni Watch {{i.id}}</h4>
                 <p class="watchs_text">{{i.description}}</p><h4 class="rate_text"><span style="color: #b60213;">{{i.price | currency:'EUR'}}</span></h4>
-                 <div class="read_bt1" ><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)">Buy Now</a></div>
+                 <div class="read_bt1" ><a class="btn btn-outline-dark mt-auto" (click)="addToCart(data[indexOfelement+1])">Buy Now</a></div>
               </div>
               <div class="col-md-6">
-                 <div class="image_2"><img [src]="productImageList[indexOfelement+1]"></div>
+                 <div class="image_2"><img (click)="openDialog(i, indexOfelement)" [src]="productImageList[indexOfelement+1]"></div>
               </div>
            </div>
         </div>
         <!--<div class="seemore_bt"><a href="#">See More</a></div> -->
         </ng-container>
      </div>
+  </div>
   </div>
 <!--<div class="carousel-container">
   <igx-carousel #carousel>
@@ -77,38 +85,32 @@
       </igx-slide>
   </igx-carousel>
 </div> -->
-<section class="py-5">
-  <h1 class="fade-in-text" style="text-align: center;">Shop in style</h1>
-  <div class="container px-4 px-lg-5 mt-5">
+
+<!-- TALVEZ O LINEAR GRADIENT TO BOTTOM -->
+
+<section class="py-5" style="background: linear-gradient(to bottom, #0a0a09, #0a0a09 50%, #0a0a09 65%, #eee);">
+  <div class="container px-4 px-lg-5 mt-5"  >
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-          <div class="col mb-5" *ngFor="let i of productList;let indexOfelement=index;">
+          <div class="col-mb-5" *ngFor="let i of productList;let indexOfelement=index;" style="margin-bottom:2%">
               <div class="card h-100">
-                  <!-- Sale badge-->
                   <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                  <!-- Product image-->
                   <img (click)="openDialog(i, indexOfelement)" [src]="productImageList[indexOfelement]" class="card-img-top" >
 
-                  <!-- Product details-->
                   <div class="card-body p-4">
                       <div class="text-center">
-                          <!-- Product name-->
                           <h5 class="fw-bolder">Special Item</h5>
-                          <!-- Product reviews
                           <div class="d-flex justify-content-center small text-warning mb-2">
                               <div class="bi-star-fill"></div>
                               <div class="bi-star-fill"></div>
                               <div class="bi-star-fill"></div>
                               <div class="bi-star-fill"></div>
                               <div class="bi-star-fill"></div>
-                          </div>-->
-                          <!-- Product price
-                          <span class="text-muted text-decoration-line-through">{{i.price}}</span>-->
+                          </div>
                           {{i.price | currency:'EUR'}}
 
                           <p>{{i.width}} x {{i.lenght}} </p>
                       </div>
                   </div>
-                  <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                       <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(i)" >Add to cart</a></div>
                   </div>
@@ -160,4 +162,4 @@
 
 
     <!-- Sidebar-->
-    
+

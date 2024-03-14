@@ -25,7 +25,7 @@ export interface DialogData {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css', './css/bootstrap.min.css', 'css/style.css', 'css/responsive.css', 'css/jquery.mCustomScrollbar.min.css', 'css/owl.carousel.min.css' ],
+  styleUrls: ['./home.component.css', './css/bootstrap.min.css', './css/style.css', './css/responsive.css', './css/jquery.mCustomScrollbar.min.css', './css/owl.carousel.min.css', './css/animate.min.css' ],
 })
 export class HomeComponent implements OnInit {
  

@@ -5,8 +5,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @font-face {
-font-family: "Righteous";
-
+font-family: "Poppins";
+src: url("https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLBT5Z11lFc-K.woff2");
+src: url("https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLBT5Z11lFc-K.woff2");
 }
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
  2) font-family: 'Poppins', sans-serif;
@@ -143,8 +144,7 @@ a {
      outline: none !important;
 }
 
-a,
-.btn {
+a {
      text-decoration: none !important;
      outline: none !important;
      -webkit-transition: all .3s ease-in-out;
@@ -226,7 +226,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../../../assets/images/banner-bg.png);
     height: auto;
     background-size: 100%;
     padding: 0px 0px 20px 0px;
@@ -258,12 +258,7 @@ button {
     color: #fff;
 }
 .navbar-nav { align-items: center; }
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-    border-radius: 20px;
-    border: 2px solid #fff;
-    color: #fff;
-}
+
 
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 20px;
@@ -328,7 +323,7 @@ button {
 
 .header_main {
     width: 100%;
-    background-image: url(../images/header-bg.png);
+    background-image: url(../../../assets/images/header-bg.png);
     background-size: 100%;
     padding: 10px 0px 37px 0px;
 }
@@ -360,12 +355,13 @@ button {
     color: #ffffff;
     text-align: center;
 }
-.read_bt1 {
+
+.read_bt {
     width: 170px;
-    float: left;
-    margin-top: 15px;
+    margin: 0 auto;
+    text-align: center;
 }
-.read_bt1 a {
+.read_bt a {
     width: 100%;
     float: left;
     font-size: 16px;
@@ -374,11 +370,12 @@ button {
     text-align: center;
     padding: 10px 0px;
     border-radius: 30px;
+    margin-top: 50px;
     font-weight: bold;
 }
-.read_bt1 a:hover{
-    color: #000;
+.read_bt a:hover{
     background-color: #ffffff;
+    color: #000;
 }
 
 #main_slider a.carousel-control-prev {
@@ -409,7 +406,7 @@ button {
 .background_bg{
     width: 100%;
     float: left;
-    background-image: url(../images/background-bg.png);
+    background-image: url(../../../assets/images/background-bg.png);
     height: auto;
 }
 /* background bg section end */
@@ -427,6 +424,7 @@ button {
 .watchs_taital {
     width: 100%;
     float: left;
+    padding-left: 5%;
     font-size: 40px;
     color: #f1f0ef;
     font-weight: bold;
@@ -575,7 +573,7 @@ h1.watchs_taital::after {
 .testimonial_section{
     width: 100%;
     float: left;
-    background-image: url(../images/testimonial-bg.png);
+    background-image: url(../../../assets/images/testimonial-bg.png);
     height: auto;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -666,7 +664,7 @@ h1.watchs_taital::after {
     width: 100%;
     float: left;
     padding-bottom: 90px;
-    background-image: url(../images/client-img.png);
+    background-image: url(../../../assets/images/background-bg.png);
     height: auto;
     background-size: 100%;
 }
@@ -749,7 +747,7 @@ textarea#comment::placeholder {
 .footer_section {
     width: 100%;
     float: left;
-    background-image: url(../images/footer-bg.png);
+    background-image: url(../../../assets/images/footer-bg.png);
     height: auto;
     padding-top: 90px;
     background-size: 100% 100%;

@@ -40,6 +40,19 @@
               "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
             "scripts": [
+              "src/assets/js/bootstrap.bundle.js",
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/jquery-3.0.0.min.js",
+              "src/assets/js/jquery.mCustomScrollbar.concat.min.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery.validate.js",
+              "src/assets/js/modernizer.js",
+              "src/assets/js/plugin.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/slider-setting.js",
               "./node_modules/hammerjs/hammer.min.js"
             ],
             "stylePreprocessorOptions": {
